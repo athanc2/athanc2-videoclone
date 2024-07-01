@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, intialscale =1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="../css/style.css">
-
+    <script defer src="path/to/jsfile.js"> </script>
 </head>
 
 <body>
@@ -27,12 +27,18 @@
             <h2>Register</h2>
             <form>
                 <label for="username">Username</label>
+                <!-- require the user to enter a username that begins with a character ([a-zA-Z])
+                 require the user to enter a username that is 3 or more alphanumeric characters -->
                 <input type="text" name="username" id="username">
                 <br>   
+            
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email">
                 <br>
                 <label for="password">Password</label>
+                <!-- require the user to enter a password that is 8 or more characters AND contains at least
+                 1 upper case letter AND 1 number and 1 of the following special characters:
+                 / * - + ! @ # $ ^ & ~ [ ] -->
                 <input type="password" name="password" id="password">
                 <br>
                 <label for="confirm-password">Confirm Password</label>
