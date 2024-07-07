@@ -1,5 +1,6 @@
-body { /* original mode */
-  margin:0px;
+body {
+  /* original mode */
+  margin: 0px;
   background-color: #0e0e10;
 }
 
@@ -20,6 +21,7 @@ li {
   float: left;
   width: 20%;
 }
+
 /* li a {
   display: block;
   padding: 20px 10px;
@@ -30,7 +32,8 @@ li {
   font-size: 14px;
   text-align: center;
 } */
-li a { /* dark li a */
+li a {
+  /* dark li a */
   display: block;
   padding: 20px 10px;
   background-color: #1f1f23;
@@ -42,7 +45,8 @@ li a { /* dark li a */
 }
 
 li a:hover {
-  color: #731de0; /* twitch.tv color */
+  color: #731de0;
+  /* twitch.tv color */
 }
 
 /* h1 {
@@ -51,7 +55,8 @@ li a:hover {
   padding: 0;
   font-size: 54px
 } */
-h1 { /* dark h1 */
+h1 {
+  /* dark h1 */
   color: #efeff1;
   font-family: FreeMono, monospace;
   padding: 0;
@@ -66,12 +71,13 @@ h1 { /* dark h1 */
   font-size: 18px;
   display:block;
 } */
-p { /* dark p */
+p {
+  /* dark p */
   color: #efeff1;
   font-family: monospace;
   padding: px;
   font-size: 18px;
-  display:block;
+  display: block;
 }
 
 /* h2 {
@@ -80,19 +86,20 @@ p { /* dark p */
   padding: 10px;
   font-size: 54px
 } */
-h2 { /* dark h2 */
+h2 {
+  /* dark h2 */
   color: #efeff1;
   font-family: monospace;
   padding: 10px;
   font-size: 54px
 }
 
-form { 
+form {
   color: #efeff1;
   font-family: monospace;
   padding: 10px;
   font-size: 18px;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 /* form { 
@@ -108,31 +115,47 @@ form {
   color: #0e0e10;
   font-family: monospace;
 } */
-footer{ 
+footer {
   color: #efeff1;
   font-family: monospace;
 }
 
-input[type=text]{
+input[type=text] {
   padding: 5px 5px;
   /* width: 80%;
   margin: 2px;
   box-sizing: border-box; */
 }
 
-input[type=textarea]{
+input[type=textarea] {
   width: 80%;
   padding: 10px 10px;
   margin: 2px;
   box-sizing: border-box;
-  grid-row:20px;
+  grid-row: 20px;
 
 }
 
-#description{
+#description {
   width: 80%;
   padding: 10px 10px;
   margin: 2px;
   box-sizing: border-box;
-  grid-row:20px;
+  grid-row: 20px;
+}
+
+.input-group input[type=text],
+.input-group input[type=password] {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.input-group input[type=checkbox] {
+  margin-left: 10px;
+  margin: 10px;
+}
+
+.invalid-text {
+  outline: solid red 2px;
 }
