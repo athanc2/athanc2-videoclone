@@ -30,7 +30,7 @@
                     <label for="username">Username</label>
                     <!-- require the user to enter a username that begins with a character ([a-zA-Z])
                  require the user to enter a username that is 3 or more alphanumeric characters -->
-                    <input type="text" name="username" id="username">
+                    <input type="text" name="username" id="username" required>
                     <div id="username-rules" style="display:none">
                         <p id="u1"><span>&check;</span> 3 or more chars</p>
                         <p id="u2"><span>&check;</span> Must begin with a letter</p>
@@ -38,27 +38,37 @@
                 </div>
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email">
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div class="input-group">
-                    <label for="password">Password</label>
                     <!-- require the user to enter a password that is 8 or more characters AND contains at least
                  1 upper case letter AND 1 number and 1 of the following special characters:
                  / * - + ! @ # $ ^ & ~ [ ] -->
-                    <input type="password" name="password" id="password">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                    <div id="password-rules" style="display: none;">
+                        <p id="p1"><span>&check;</span> At least 8 characters</p>
+                        <p id="p2"><span>&check;</span> An uppercase letter</p>
+                        <p id="p3"><span>&check;</span> A number</p>
+                        <p id="p4"><span>&check;</span> A special character</p>
+                    </div>
+
                 </div>
                 <div class="input-group">
                     <label for="confirm-password">Confirm Password</label>
                     <input type="password" name="password" id="confirm-password">
+                    <div id="matchpassword-rules" style="display: none;">
+                        <p id="p5" style="color: red;"><span>&check;</span> Passwords must match</p>
+                    </div>
                 </div>
                 <div class="input-group">
                     <label for="checkbox">I am over 13 years old</label>
-                    <input type="checkbox">
+                    <input type="checkbox" required>
                 </div>
                 <div class="input-group">
                     <label for="checkbox">I accept the <a href="#">Terms of Service</a> and <a href="#">Privacy
                             Rules</a></label>
-                    <input type="checkbox">
+                    <input type="checkbox" required>
                 </div>
 
                 <button type="submit">Register</button>

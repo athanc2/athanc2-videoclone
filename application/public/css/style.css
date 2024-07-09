@@ -1,14 +1,7 @@
 body {
-  /* original mode */
-  margin: 0px;
+  margin: 0;
   background-color: #0e0e10;
 }
-
-/* body{ 
-  background-color: #ffffff;
-  margin:0px;
-} */
-
 
 ul {
   list-style-type: none;
@@ -22,18 +15,7 @@ li {
   width: 20%;
 }
 
-/* li a {
-  display: block;
-  padding: 20px 10px;
-  background-color:#efeff1;
-  text-decoration: none;
-  color: #1f1f23;
-  font-family: monospace;
-  font-size: 14px;
-  text-align: center;
-} */
 li a {
-  /* dark li a */
   display: block;
   padding: 20px 10px;
   background-color: #1f1f23;
@@ -46,114 +28,76 @@ li a {
 
 li a:hover {
   color: #731de0;
-  /* twitch.tv color */
 }
 
-/* h1 {
-  color: #0e0e10;
-  font-family: FreeMono, monospace;
-  padding: 0;
-  font-size: 54px
-} */
-h1 {
-  /* dark h1 */
-  color: #efeff1;
-  font-family: FreeMono, monospace;
-  padding: 0;
-  font-size: 54px
-}
-
-
-/* p {
-  color: #0e0e10;
-  font-family: monospace;
-  padding: px;
-  font-size: 18px;
-  display:block;
-} */
-p {
-  /* dark p */
-  color: #efeff1;
-  font-family: monospace;
-  padding: px;
-  font-size: 18px;
-  display: block;
-}
-
-/* h2 {
-  color: #0e0e10;
-  font-family: monospace;
-  padding: 10px;
-  font-size: 54px
-} */
+h1,
 h2 {
-  /* dark h2 */
+  color: #efeff1;
+  font-family: FreeMono, monospace;
+  padding: 0;
+}
+
+h1 {
+  font-size: 54px;
+}
+
+h2 {
+  font-size: 54px;
+  padding: 10px;
+}
+
+p {
   color: #efeff1;
   font-family: monospace;
-  padding: 10px;
-  font-size: 54px
+  font-size: 18px;
+  padding: 0;
+  display: block;
 }
 
 form {
   color: #efeff1;
   font-family: monospace;
-  padding: 10px;
   font-size: 18px;
+  padding: 10px;
   margin-bottom: 10px;
 }
 
-/* form { 
-  color: #0e0e10;
-  font-family: monospace;
+input[type=text],
+input[type=email],
+input[type=password] {
+  width: calc(100% - 60px);
   padding: 10px;
-  font-size: 18px;
-  margin-bottom:10px;
-} */
-
-
-/* footer{
-  color: #0e0e10;
+  margin: 5px;
+  box-sizing: border-box;
   font-family: monospace;
-} */
-footer {
+  font-size: 14px;
+  background-color: #1f1f23;
+  border: 1px solid #3a3a3e;
+  color: #efeff1;
+  outline: none;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus {
+  border-color: #731de0;
+}
+
+button[type=submit],
+button[type=reset] {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #731de0;
+  border: none;
   color: #efeff1;
   font-family: monospace;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-input[type=text] {
-  padding: 5px 5px;
-  /* width: 80%;
-  margin: 2px;
-  box-sizing: border-box; */
-}
-
-input[type=textarea] {
-  width: 80%;
-  padding: 10px 10px;
-  margin: 2px;
-  box-sizing: border-box;
-  grid-row: 20px;
-
-}
-
-#description {
-  width: 80%;
-  padding: 10px 10px;
-  margin: 2px;
-  box-sizing: border-box;
-  grid-row: 20px;
-}
-
-.input-group input[type=text],
-.input-group input[type=password] {
-  width: 100%;
-  padding: 5px;
-  box-sizing: border-box;
-}
-
-.input-group input[type=checkbox] {
-  margin-left: 10px;
-  margin: 10px;
+button[type=submit]:hover,
+button[type=reset]:hover {
+  background-color: #9d3be0;
 }
 
 .invalid-text {
