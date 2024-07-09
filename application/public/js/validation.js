@@ -96,7 +96,7 @@ function validpassword(password) {
 passwordInputField.addEventListener('input', function (e) {
     const password = e.target.value;
     validpassword(password);
-    passwordmatch(password, confirmPasswordInputField.value);
+    passwordsMatch(password, confirmPasswordInputField.value);
 });
 
 passwordInputField.addEventListener('focus', function () {
@@ -107,7 +107,15 @@ passwordInputField.addEventListener('focus', function () {
 // matching passwords
 function passwordsMatch(password, confirmPassword) {
     const match = password === confirmPassword;
-    document.getElementById('p5').style.color = match ? "green" : "red";
+    if (!match) {
+        document.getElementById('p5').style.color = "red";
+        userInputField.classList.add('invalid-text');
+        userInputField.classList.remove('valid-text');
+    } else { 
+        document.getElementById('p5').style.color = "green";
+        userInputField.classList.add('valid-text');
+        userInputField.classList.remove('invalid-text');
+    }
 }
 
 confirmPasswordInputField.addEventListener('input', function (e) {
