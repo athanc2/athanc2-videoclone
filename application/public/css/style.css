@@ -106,7 +106,19 @@ button[type=reset]:hover {
 
 /* MAIN CONTENT */
 
-#main_content{
+#main_content {
   grid-area: content;
   gap: 0.8em;
+}
+
+.card {
+  border: 1px;
+  width: 100px;
+  flex: 1 0 150px;
+  max-width: 100%;
+}
+
+.card img {
+  display: block;
+  max-width: 100%;
 }
