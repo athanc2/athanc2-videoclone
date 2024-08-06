@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, intialscale =1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -12,35 +12,40 @@
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">CYC</a></li>
-                <li><a href="postvideo.html">Post</a></li>
-                <li><a href="viewpost.html">View</a></li>
+                <li><a href="index.html">Posts</a></li>
+                <li><a href="postvideo.html">New Post</a></li>
+                <li class="search">
+                    <input type="text" placeholder="Search">
+                    <button type="button">✔</button>
+                </li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="registration.html">Register</a></li>
+                <li><a href="registration.html" style="background-color:#731de0;">Register</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <header>
-            <br>
+        <div class="container">
             <h2>Login</h2>
             <form>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username">
-                <br>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-                <br>
-                <label for="checkbox">Remember me</label>
-                <input type="checkbox">
-                <br>
-                <button type="submit">Login</button>
-                <button type="reset">Reset</button>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="input-group">
+                    <label for="remember">Remember me</label>
+                    <input type="checkbox" id="remember">
+                </div>
+                <div class="button-group">
+                    <button type="submit">Login</button>
+                    <button type="reset">Reset</button>
+                </div>
             </form>
-        </header>
+        </div>
     </main>
-
-
 </body>
 
 </html>

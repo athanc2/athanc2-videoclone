@@ -8,23 +8,18 @@ router.get('/', function (req, res, next) {
 });
 
 // login 
-router.get('/login', function (req, res, next) {
+router.get('/login.html', function (req, res, next) {
   res.render('login');
 });
 
 // register
-router.get('/register', function (req, res, next) {
-  res.render('register');
+router.get('/registration.html', function (req, res, next) {
+  res.render('registration');
 });
 
 // postvideo
-router.get('/postvideo', function (req, res, next) {
+router.get('/postvideo.html', function (req, res, next) {
   res.render('postvideo');
-});
-
-// viewpost
-router.get('/viewpost', function (req, res, next) {
-  res.render('viewpost');
 });
 
 module.exports = router;

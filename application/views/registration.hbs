@@ -3,35 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, intialscale =1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script defer src="../js/validation.js"> </script>
+    <script defer src="../js/validation.js"></script>
 </head>
 
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">CYC</a></li>
-                <li><a href="postvideo.html">Post</a></li>
-                <li><a href="viewpost.html">View</a></li>
+                <li><a href="index.html">Posts</a></li>
+                <li><a href="postvideo.html">New Post</a></li>
+                <li class="search">
+                    <input type="text" placeholder="Search">
+                    <button type="button">✔</button>
+                </li>
                 <li><a href="login.html">Login</a></li>
-                <li><a href="registration.html">Register</a></li>
+                <li><a href="registration.html" style="background-color:#731de0;">Register</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <header>
-            <br>
+        <div class="container">
             <h2>Register</h2>
-            <form class="forms">
+            <form class="forms" method="POST" action"/users/register" enctype="application/x-www-form-urlencoded">
                 <div class="input-group">
                     <label for="username">Username</label>
-                    <!-- require the user to enter a username that begins with a character ([a-zA-Z])
-                 require the user to enter a username that is 3 or more alphanumeric characters -->
                     <input type="text" name="username" id="username" required>
-                    <div id="username-rules" style="display:none">
+                    <div id="username-rules" class="rules">
                         <p id="u1"><span>&check;</span> 3 or more chars</p>
                         <p id="u2"><span>&check;</span> Must begin with a letter</p>
                     </div>
@@ -41,42 +41,41 @@
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="input-group">
-                    <!-- require the user to enter a password that is 8 or more characters AND contains at least
-                 1 upper case letter AND 1 number and 1 of the following special characters:
-                 / * - + ! @ # $ ^ & ~ [ ] -->
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" required>
-                    <div id="password-rules" style="display: none;">
+                    <div id="password-rules" style="display:none">
                         <p id="p1"><span>&check;</span> At least 8 characters</p>
                         <p id="p2"><span>&check;</span> An uppercase letter</p>
                         <p id="p3"><span>&check;</span> A number</p>
                         <p id="p4"><span>&check;</span> A special character</p>
                     </div>
-
                 </div>
                 <div class="input-group">
                     <label for="confirm-password">Confirm Password</label>
                     <input type="password" name="password" id="confirm-password">
                     <div id="matchpassword-rules" style="display: none;">
-                        <p id="p5" style="color: red;"><span>&check;</span> Passwords must match</p>
+                        <p id="p5" class="invalid-text"><span>&check;</span> Passwords must match</p>
                     </div>
                 </div>
                 <div class="input-group">
-                    <label for="checkbox">I am over 13 years old</label>
-                    <input type="checkbox" required>
+                    <label for="age">I am over 13 years old</label>
+                    <input type="checkbox" id="age" required>
                 </div>
                 <div class="input-group">
-                    <label for="checkbox">I accept the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                    <label for="terms">I accept the <a href="#">Terms of Service</a> and <a href="#">Privacy
                             Rules</a></label>
-                    <input type="checkbox" required>
+                    <input type="checkbox" id="terms" required>
                 </div>
-
-                <button type="submit">Register</button>
-                <button type="reset">Reset</button>
+                <div class="button-group">
+                    <button type="submit">Register</button>
+                    <button type="reset">Reset</button>
+                </div>
             </form>
-        </header>
+        </div>
     </main>
-
 </body>
+<footer>
+    Athan Cheung &copy; 2024
+</footer>
 
 </html>
