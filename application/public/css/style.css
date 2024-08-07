@@ -151,30 +151,12 @@ button[type=reset]:hover {
 }
 
 
-.video-info p {
-  margin: 5px 0;
-}
-
-.video-container video {
-  width: 100%;
-  border-radius: 5px;
-}
-
-.comments-section {
-  margin-top: 20px;
-}
-
-.comments-section h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-#post-comments {
-  margin: 10px 0;
-}
 
 footer {
   color: #efeff1;
+  background-color: black;
+  width: 100%;
+  text-align: center;
 }
 
 .search {

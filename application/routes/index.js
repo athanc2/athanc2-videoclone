@@ -4,21 +4,21 @@ var router = express.Router();
 /* GET home page. */
 // localhost:3000/
 router.get('/', function (req, res, next) {
-  res.render('index.hbs', { title: 'CSC 317 Clone', name: "Athan Cheung" });
+  res.render('index', { title: 'CSC 317 Clone', name: "Athan Cheung" });
 });
 
 // login 
-router.get('/login.html', function (req, res, next) {
-  res.render('login');
+router.get('/login', function (req, res, next) {
+  res.render('login', { title: 'Login', css: ['style.css'] });
 });
 
 // register
-router.get('/registration.html', function (req, res, next) {
-  res.render('registration');
+router.get('/registration', function (req, res, next) {
+  res.render('registration', { title: 'Registration', /* js:['validation.js'] */ });
 });
 
 // postvideo
-router.get('/postvideo.html', function (req, res, next) {
+router.get('/postvideo', function (req, res, next) {
   res.render('postvideo');
 });
 
