@@ -19,9 +19,42 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // /post/create
-router.post('/create', upload.single('videoUpload'), function (req, res, next) {
-    console.log(req.file);
-    res.json(req.file);
+router.post('/create', upload.single('videoUpload'), async function (req, res, next) {
+    const userId = req.session.user.userId;
+    const { title, description } = req.body;
+    const { path } = req.file;
+
+    if (!title || !description || !path) {
+        req.flash("error", "Post must have a title AND description AND video");
+        return req.session.save((err) => {
+            if (err) next(err);
+            res.redirect("/post");
+        });
+    }
+    try {
+        const [resultObj, _] = await db.query(`INSERT INTO posts (title, description, description,video,thumbnail,fk_user_id) VALUE (?,?,?,?);`, [title, description, path, "", userId]);
+        console.log(result.resultObj);
+        if (resultObj.affectedRows == 1) {
+            req.flash("success", "Your post has been created");
+            return req.session.save((err) => {
+                if (err) next(err);
+                return res.redirect(`/post/${resultObj.insertId}`);
+            })
+        } else {
+            req.flash("error", "Your post could not be created");
+            return req.session.save((err) => {
+                if (err) next(err);
+                return res.redirect('/post');
+            })
+        }
+
+    } catch (err) {
+        next(err)
+    }
+});
+
+router.get('/:id(\\d+)', function (req, res, next) {
+    res.render('viewpost', { title: `View Post`, js: [viewpost.js] });
 });
 
 module.exports = router;
