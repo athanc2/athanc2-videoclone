@@ -4,12 +4,12 @@ var router = express.Router();
 /* GET home page. */
 // localhost:3000/
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'CSC 317 Clone', name: "Athan Cheung" });
+  res.render('index', { title: 'CSC 317 Clone', name: "Athan Cheung", /* js:['validation.js'] */ });
 });
 
 // login 
 router.get('/login', function (req, res, next) {
-  res.render('login', { title: 'Login', css: ['style.css'] });
+  res.render('login', { title: 'Login', /* js:['validation.js'] */ });
 });
 
 // register
