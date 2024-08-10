@@ -3,7 +3,6 @@ const router = express.Router();
 const db = require('../conf/database');
 const bcrypt = require('bcrypt');
 
-
 const { errorPrint, successPrint } = require('../helpers/debug/debugprinters');
 
 

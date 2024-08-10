@@ -16,6 +16,6 @@ module.exports = {
         }
     },
     getPostById: function (req, res, next) {
-        const { postId } = req.params;
+        const { postId } = req.params.id;
     }
 }

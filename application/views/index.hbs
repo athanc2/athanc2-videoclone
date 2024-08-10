@@ -5,6 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posts</title>
+    <style>
+        .post-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .container {
+            width: 300px;
+            margin: 20px auto;
+            padding: 15px;
+            box-sizing: border-box;
+
+        }
+
+        video {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,19 +43,74 @@
         </nav>
     </header>
     <h2>Posts</h2>
-    <div class="video-grid">
-        {{#each videos}}
-        <div class="video-box">
-            <a href="/post/{{this.id}}">
-                <img src="{{this.thumbnail}}" alt="{{this.title}}">
-                <div class="video-info">
-                    <h3>{{this.title}}</h3>
-                    <p>{{this.description}}</p>
-                </div>
-            </a>
+    <div class="post-container">
+        <div class="container" style="text-align:center;">
+            <p id="post-title">Title</p>
+            <p id="post-author">Author</p>
+            <p id="post-time">Post creation time</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="..\public\videos\uploads\sample2-1723259961407-547209634.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
-        {{/each}}
+
+        <div class="container" style="text-align:center;">
+            <p id="post-title">Title</p>
+            <p id="post-author">Author</p>
+            <p id="post-time">Post creation time</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="..\public\videos\uploads\sample2-1723259961407-547209634.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="container" style="text-align:center;">
+            <p id="post-title">Title</p>
+            <p id="post-author">Author</p>
+            <p id="post-time">Post creation time</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="..\public\videos\uploads\sample2-1723259961407-547209634.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
     </div>
+
+    <div class="post-container">
+        <div class="container" style="text-align:center;">
+            <p id="post-title">Title</p>
+            <p id="post-author">Author</p>
+            <p id="post-time">Post creation time</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="..\public\videos\uploads\sample2-1723259961407-547209634.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="container" style="text-align:center;">
+            <p id="post-title">Title</p>
+            <p id="post-author">Author</p>
+            <p id="post-time">Post creation time</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="..\public\videos\uploads\sample2-1723259961407-547209634.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="container" style="text-align:center;">
+            <p id="post-title">Title</p>
+            <p id="post-author">Author</p>
+            <p id="post-time">Post creation time</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="..\public\videos\uploads\sample2-1723259961407-547209634.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
     </div>
 </body>
 <footer>

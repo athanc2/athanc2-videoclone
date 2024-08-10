@@ -3,7 +3,9 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const { getPostById, makeThumbnail } = require('../middleware/posts.js');
 const db = require('../conf/database');
+const flash = require('connect-flash');
 const uploadDir = path.join(__dirname, '../public/videos/uploads');
 
 const storage = multer.diskStorage({
@@ -61,7 +63,7 @@ router.post('/create', upload.single('videoUpload'), async function (req, res, n
     }
 });
 
-router.get('/:id(\\d+)', function (req, res, next) {
+router.get('/:id(\\d+)', getPostById, function (req, res, next) {
     res.render('viewpost', { title: `View Post`, js: [posts.js] });
 });
 
