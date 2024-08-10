@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const db = require('../conf/database');
 const uploadDir = path.join(__dirname, '../public/videos/uploads');
 
 const storage = multer.diskStorage({
@@ -20,7 +21,15 @@ const upload = multer({ storage: storage });
 
 // /post/create
 router.post('/create', upload.single('videoUpload'), async function (req, res, next) {
-    const userId = req.session.user.userId;
+    const userId = req.session.user?.userId;
+    if (!userId) {
+        req.flash("error", "Must be logged in to create a post");
+        return req.session.save((err) => {
+            if (err) next(err);
+            res.redirect("/login");
+        });
+    }
+
     const { title, description } = req.body;
     const { path } = req.file;
 
@@ -32,8 +41,7 @@ router.post('/create', upload.single('videoUpload'), async function (req, res, n
         });
     }
     try {
-        const [resultObj, _] = await db.query(`INSERT INTO posts (title, description, description,video,thumbnail,fk_user_id) VALUE (?,?,?,?);`, [title, description, path, "", userId]);
-        console.log(result.resultObj);
+        const [resultObj, _] = await db.query(`INSERT INTO posts (title, description,video,thumbnail,fk_user_id) VALUE (?,?,?,?,?);`, [title, description, path, "", userId]);
         if (resultObj.affectedRows == 1) {
             req.flash("success", "Your post has been created");
             return req.session.save((err) => {
@@ -54,7 +62,7 @@ router.post('/create', upload.single('videoUpload'), async function (req, res, n
 });
 
 router.get('/:id(\\d+)', function (req, res, next) {
-    res.render('viewpost', { title: `View Post`, js: [viewpost.js] });
+    res.render('viewpost', { title: `View Post`, js: [posts.js] });
 });
 
 module.exports = router;
