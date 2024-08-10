@@ -23,16 +23,19 @@
         </nav>
     </header>
     <h2>Posts</h2>
-    <p id="post-title">Title</p>
-    <p id="post-author">Author</p>
-    <p id="post-time">Post creation time</p>
-    <div class="video-container">
-        <video controls>
-            <source src="../application/videos/sample2.mp4" type="video/mp4">
-        </video>
+    <div class="video-grid">
+        {{#each videos}}
+        <div class="video-box">
+            <a href="/post/{{this.id}}">
+                <img src="{{this.thumbnail}}" alt="{{this.title}}">
+                <div class="video-info">
+                    <h3>{{this.title}}</h3>
+                    <p>{{this.description}}</p>
+                </div>
+            </a>
+        </div>
+        {{/each}}
     </div>
-    <div class="comments-section">
-        <p id="post-comments">Comments</p>
     </div>
 </body>
 <footer>
