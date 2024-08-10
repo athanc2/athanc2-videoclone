@@ -19,7 +19,7 @@ router.get('/registration', function (req, res, next) {
 
 // postvideo
 router.get('/postvideo', function (req, res, next) {
-  res.render('postvideo');
+  res.render('postvideo', { title: 'Post Video', /* js:['validation.js'] */ });
 });
 
 module.exports = router;
