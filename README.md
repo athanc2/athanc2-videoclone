@@ -23,5 +23,4 @@ Please follow the instructions below and fill in the information requested when 
 2. steps here
 
 ## Run Instructions
-1. steps here
-2. steps here 
+1. npm start
